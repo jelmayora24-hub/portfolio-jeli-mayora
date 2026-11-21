@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeli Mayora — Web Developer Portfolio (Laravel, Filament, CRM & AI Agent)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+    }
+    .glass {
+      background: rgba(17, 24, 39, 0.78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .filament-card {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.92));
+      border: 1px solid rgba(249, 115, 22, 0.25);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-orange-500 selection:text-white">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 inset-x-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 font-extrabold text-lg tracking-tight text-white">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-slate-950 font-mono font-bold">JM</span>
+        <span>Jeli<span class="text-orange-400">Mayora</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#video-showcase" class="hover:text-orange-400 transition">🎥 Video Portofolio</a>
+        <a href="#kecocokan" class="hover:text-orange-400 transition">Kualifikasi Magang</a>
+        <a href="#crm-preview" class="hover:text-orange-400 transition">Simulasi CRM Filament</a>
+        <a href="#projects" class="hover:text-orange-400 transition">Semua Project (7)</a>
+        <a href="#prestasi" class="hover:text-orange-400 transition">Prestasi</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/jelmayora24-hub" target="_blank" rel="noopener"
+           class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold border border-slate-700 transition">
+          GitHub ↗
+        </a>
+        <a href="#kontak"
+           class="px-4 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-950 text-xs font-bold transition">
+          Hubungi Saya
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 px-6 relative overflow-hidden">
+    <div class="absolute -top-28 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-orange-500/15 blur-[130px] rounded-full pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-300 text-xs font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Siap Magang WFA • Mahasiswa Aktif Semester 5 (D4 TRPL — Politeknik Negeri Padang)
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          Web Developer <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-rose-400">
+            PHP, Laravel, CRM & AI Agent
+          </span>
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+          Halo! Saya <strong class="text-white">Jeli Mayora</strong>, mahasiswi aktif Semester 5 D4 Teknologi Rekayasa Perangkat Lunak di Politeknik Negeri Padang. Saya fokus mengembangkan aplikasi web berbasis <strong class="text-orange-300">PHP & Laravel</strong> (termasuk sistem manajemen bisnis/CRM & ekosistem admin panel modern seperti <strong class="text-orange-300">Filament</strong>), dipadukan dengan pemanfaatan <strong class="text-orange-300">AI Agent (Google Antigravity)</strong> untuk membangun 7+ proyek lintas Web, CRM, Microservices, dan Machine Learning.
+        </p>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="#video-showcase" class="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 font-bold text-sm shadow-lg shadow-orange-500/20 hover:opacity-95 transition">
+            🎥 Tonton & Download Video Portofolio
+          </a>
+          <a href="#projects" class="px-6 py-3 rounded-xl glass text-white font-semibold text-sm hover:border-orange-400/50 transition">
+            Lihat 7 Project Antigravity
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
+          <div>
+            <div class="text-2xl font-extrabold text-white">7+ Project</div>
+            <div class="text-xs text-slate-400">Laravel CRM, SIAKAD, SOA, FastAPI, ML & Mobile</div>
+          </div>
+          <div>
+            <div class="text-2xl font-extrabold text-orange-400">Laravel 13</div>
+            <div class="text-xs text-slate-400">PHP 8.3, Eloquent, RBAC, Filament Concepts</div>
+          </div>
+          <div>
+            <div class="text-2xl font-extrabold text-emerald-400">Juara 3 KMIPN</div>
+            <div class="text-xs text-slate-400">UI/UX Design Nasional & Finalis E-Gov 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Developer Profile Card -->
+      <div class="lg:col-span-5">
+        <div class="glass rounded-2xl p-6 space-y-5 border border-slate-800 shadow-2xl">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-orange-500 to-amber-400 flex items-center justify-center text-slate-950 font-extrabold text-xl">
+                JM
+              </div>
+              <div>
+                <h2 class="font-bold text-white text-base">Jeli Mayora</h2>
+                <p class="text-xs text-slate-400">D4 Rekayasa Perangkat Lunak • Semester 5</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono">
+              WFA Ready
+            </span>
+          </div>
+
+          <div class="space-y-3 text-xs font-mono">
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+              <div class="text-slate-400 mb-1">// Tech Stack & Tools</div>
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                <span class="px-2.5 py-1 rounded bg-orange-500/15 text-orange-300 border border-orange-500/30">PHP 8.3</span>
+                <span class="px-2.5 py-1 rounded bg-red-500/15 text-red-300 border border-red-500/30">Laravel 13</span>
+                <span class="px-2.5 py-1 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">Filament Admin</span>
+                <span class="px-2.5 py-1 rounded bg-sky-500/15 text-sky-300 border border-sky-500/30">MySQL & Eloquent</span>
+                <span class="px-2.5 py-1 rounded bg-purple-500/15 text-purple-300 border border-purple-500/30">Antigravity AI Agent</span>
+                <span class="px-2.5 py-1 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">FastAPI & WebSocket</span>
+                <span class="px-2.5 py-1 rounded bg-blue-500/15 text-blue-300 border border-blue-500/30">Next.js & Spring Boot</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
+              <div class="text-slate-400">// Kualifikasi Utama</div>
+              <p class="text-slate-300 font-sans text-xs leading-relaxed">
+                ✅ <strong class="text-white">Mahasiswa Aktif:</strong> Semester 5 D4 TRPL PNP (2024–2028)<br/>
+                ✅ <strong class="text-white">PHP, Laravel & Filament:</strong> Membangun sistem CRUD, RBAC, Auth Captcha, Eloquent Relations, & PDF Report<br/>
+                ✅ <strong class="text-white">Pengalaman Sistem CRM:</strong> Mengembangkan <em>SaditaSystem</em> untuk pengelolaan pelanggan, pesanan, verifikasi pembayaran, dan operasional<br/>
+                ✅ <strong class="text-white">AI-Native Workflow:</strong> Mengembangkan 7+ proyek di Google Antigravity AI Agent
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Video Portfolio Player & WebM Video Generator -->
+  <section id="video-showcase" class="py-16 px-6 bg-slate-900/60 border-y border-slate-800">
+    <div class="max-w-6xl mx-auto space-y-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-orange-400">Interactive Video Showcase</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">🎥 Video Presentasi Portofolio (Semua Project Antigravity)</h2>
+          <p class="text-sm text-slate-400 mt-1">
+            Putar video presentasi interaktif seluruh 7 project Anda di bawah ini, atau klik <strong>Rekam & Download Video (.webm)</strong> untuk mengunduh file videonya.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="togglePlayVideo()" id="btnPlayVideo" class="px-4 py-2 rounded-xl bg-orange-500 hover:bg-orange-400 text-slate-950 font-bold text-xs transition">
+            ⏸️ Jeda Video
+          </button>
+          <button onclick="prevSlide()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs transition">
+            ⏮️ Slide Sebelumnya
+          </button>
+          <button onclick="nextSlide()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs transition">
+            ⏭️ Slide Berikutnya
+          </button>
+          <button onclick="recordAndDownloadVideo()" id="btnRecordVideo" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition">
+            ⬇️ Rekam & Download Video (.webm)
+          </button>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-3 border border-orange-500/30 shadow-2xl">
+        <canvas id="portfolioCanvas" width="1280" height="720" class="w-full h-auto rounded-xl bg-slate-950"></canvas>
+      </div>
+      <p id="recordStatus" class="text-xs text-center font-mono text-amber-300 hidden"></p>
+    </div>
+  </section>
+
+  <!-- Checklist Kecocokan Kualifikasi Magang -->
+  <section id="kecocokan" class="py-16 px-6">
+    <div class="max-w-6xl mx-auto space-y-10">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-mono uppercase tracking-widest text-orange-400">Role Alignment</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Kesesuaian Kualifikasi Web Developer Intern</h2>
+        <p class="text-sm text-slate-400">Pemetaan langsung antara syarat magang WFA dengan proyek nyata dan kemampuan teknis saya.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass rounded-2xl p-6 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold">01</div>
+          <h3 class="font-bold text-white text-base">Mahasiswa Aktif & Motivasi Belajar Tinggi</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Mahasiswi aktif Semester 5 D4 Teknologi Rekayasa Perangkat Lunak di Politeknik Negeri Padang. Terbiasa belajar mandiri dengan cepat, mengerjakan proyek berbasis masalah nyata (PBL), dan siap bekerja secara <strong>Work From Anywhere (WFA)</strong>.
+          </p>
+        </div>
+
+        <div class="glass rounded-2xl p-6 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold">02</div>
+          <h3 class="font-bold text-white text-base">PHP, Framework Laravel & Filament</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Menguasai arsitektur MVC Laravel 13, Routing, Middleware RBAC, Eloquent ORM (`with`, `withCount`, Soft Deletes), Blade, serta memahami arsitektur <strong>FilamentPHP</strong> (Resources, Form Schema, Table Columns, Filters, Actions, dan Stats Overview Widgets).
+          </p>
+        </div>
+
+        <div class="glass rounded-2xl p-6 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold">03</div>
+          <h3 class="font-bold text-white text-base">Pengalaman Mengembangkan Website CRM</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Berpengalaman mengembangkan <strong>SaditaSystem</strong> (Sistem Informasi Manajemen Bisnis & Pelanggan untuk Sadita Florist & Dekorasi): mengelola alur pemesanan pelanggan, review admin, penyesuaian harga, verifikasi pembayaran, hingga pelacakan status penyelesaian.
+          </p>
+        </div>
+
+        <div class="glass rounded-2xl p-6 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold">04</div>
+          <h3 class="font-bold text-white text-base">Kemampuan Menggunakan AI Agent</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Aktif menggunakan <strong>Google Antigravity AI Agent</strong> untuk mengembangkan 7+ proyek mulai dari aplikasi Laravel CRM, SIAKAD, Microservices Spring Boot, FastAPI WebSocket, hingga Machine Learning SVM dan aplikasi Mobile.
+          </p>
+        </div>
+
+        <div class="glass rounded-2xl p-6 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold">05</div>
+          <h3 class="font-bold text-white text-base">Keunggulan UI/UX & Kualitas Perangkat Lunak</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Peraih <strong>Juara 3 UI/UX Design KMIPN</strong> tingkat nasional. Memastikan aplikasi CRM dan dashboard admin memiliki antarmuka yang bersih, intuitif, dan efisien bagi tim operasional harian.
+          </p>
+        </div>
+
+        <div class="glass rounded-2xl p-6 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold">06</div>
+          <h3 class="font-bold text-white text-base">Git Workflow & Dokumentasi Rekayasa</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Terbiasa menggunakan Git & GitHub dengan alur multi-branch (`main`, `dev`, feature branch), Pull Request, Conventional Commits, serta perancangan UML 2.5, BPMN, ERD 3NF, dan dokumen SRS.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulasi Interaktif CRM Panel (Filament Style) -->
+  <section id="crm-preview" class="py-16 px-6 bg-slate-900/40 border-y border-slate-800/80">
+    <div class="max-w-6xl mx-auto space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-orange-400">Interactive CRM Simulation</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Simulasi Modul CRM (Laravel + Filament Concept)</h2>
+          <p class="text-sm text-slate-400 mt-1">
+            Demonstrasi interaktif pengelolaan pelanggan & pipeline pesanan CRM dengan gaya <strong>Filament Admin Panel</strong>.
+          </p>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="filterCrm('ALL')" id="btn-ALL" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-orange-500 text-slate-950">Semua Pipeline</button>
+          <button onclick="filterCrm('NEW')" id="btn-NEW" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Lead Baru</button>
+          <button onclick="filterCrm('REVIEW')" id="btn-REVIEW" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Negosiasi Harga</button>
+          <button onclick="filterCrm('PAID')" id="btn-PAID" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Terverifikasi</button>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="filament-card rounded-xl p-5">
+          <div class="text-xs text-slate-400 font-medium">Total Pelanggan & Leads Aktif</div>
+          <div class="text-2xl font-extrabold text-white mt-1">128 Pelanggan</div>
+          <div class="text-xs text-emerald-400 mt-2">↑ +18% bulan ini • StatsOverviewWidget</div>
+        </div>
+        <div class="filament-card rounded-xl p-5">
+          <div class="text-xs text-slate-400 font-medium">Konversi Deal / Pesanan Selesai</div>
+          <div class="text-2xl font-extrabold text-orange-400 mt-1">84.5%</div>
+          <div class="text-xs text-slate-400 mt-2">Rata-rata SLA respon admin &lt; 15 menit</div>
+        </div>
+        <div class="filament-card rounded-xl p-5">
+          <div class="text-xs text-slate-400 font-medium">Total Nilai Transaksi CRM</div>
+          <div class="text-2xl font-extrabold text-white mt-1">Rp 42.850.000</div>
+          <div class="text-xs text-amber-300 mt-2">Terintegrasi cetak Invoice PDF (DomPDF)</div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden border border-slate-800">
+        <div class="p-4 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 bg-slate-900/70">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            <span class="ml-2 text-xs font-mono text-slate-400">CustomerOrderResource.php — Filament Table Builder</span>
+          </div>
+          <input
+            type="text"
+            id="crmSearch"
+            oninput="renderCrmTable()"
+            placeholder="Cari nama pelanggan atau perusahaan..."
+            class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-white focus:outline-none focus:border-orange-500 w-64"
+          />
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-900/90 text-slate-400 uppercase font-mono">
+              <tr>
+                <th class="py-3.5 px-4">ID Order</th>
+                <th class="py-3.5 px-4">Pelanggan / Instansi</th>
+                <th class="py-3.5 px-4">Layanan / Paket</th>
+                <th class="py-3.5 px-4">Status Pipeline</th>
+                <th class="py-3.5 px-4">Nilai Estimasi</th>
+                <th class="py-3.5 px-4 text-right">Aksi Cepat</th>
+              </tr>
+            </thead>
+            <tbody id="crmTableBody" class="divide-y divide-slate-800/80"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Katalog Lengkap 7 Project Antigravity -->
+  <section id="projects" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-orange-400">Complete Antigravity Project Showcase</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">7 Project yang Dikembangkan Bersama Antigravity AI Agent</h2>
+          <p class="text-sm text-slate-400 mt-1">Filter berdasarkan kategori teknologi untuk melihat seluruh proyek yang pernah saya bangun.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterProjects('ALL')" id="proj-ALL" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-orange-500 text-slate-950">Semua (7)</button>
+          <button onclick="filterProjects('LARAVEL')" id="proj-LARAVEL" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Laravel & CRM</button>
+          <button onclick="filterProjects('WEB')" id="proj-WEB" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Web, API & Microservices</button>
+          <button onclick="filterProjects('AI')" id="proj-AI" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">AI ML & Mobile</button>
+        </div>
+      </div>
+
+      <div id="projectsGrid" class="grid md:grid-cols-2 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Prestasi & Pengalaman Organisasi -->
+  <section id="prestasi" class="py-16 px-6 bg-slate-900/40 border-t border-slate-800/80">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+      <div class="glass rounded-2xl p-7 space-y-5">
+        <span class="text-xs font-mono uppercase tracking-widest text-orange-400">Achievements</span>
+        <h3 class="text-2xl font-extrabold text-white">Prestasi Akademik & Kompetisi</h3>
+        <ul class="space-y-4 text-sm">
+          <li class="flex gap-3">
+            <span class="text-orange-400 font-bold">🏆</span>
+            <div>
+              <div class="font-bold text-white">Juara 3 Kategori UI/UX Design — KMIPN</div>
+              <div class="text-xs text-slate-400">Kompetisi Mahasiswa Informatika Politeknik Nasional</div>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-orange-400 font-bold">🎖️</span>
+            <div>
+              <div class="font-bold text-white">Finalis Lomba E-Government — KMIPN 2026</div>
+              <div class="text-xs text-slate-400">Kompetisi Mahasiswa Informatika Politeknik Nasional 2026</div>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-orange-400 font-bold">✍️</span>
+            <div>
+              <div class="font-bold text-white">Penulis Terpilih & Juara Favorit Lomba Baca Puisi</div>
+              <div class="text-xs text-slate-400">Kompetisi penulisan esai ilmiah, cerpen, dan puisi tingkat nasional</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="glass rounded-2xl p-7 space-y-5">
+        <span class="text-xs font-mono uppercase tracking-widest text-orange-400">Leadership & Communication</span>
+        <h3 class="text-2xl font-extrabold text-white">Pengalaman Organisasi & Kolaborasi</h3>
+        <ul class="space-y-4 text-sm">
+          <li class="flex gap-3">
+            <span class="text-emerald-400 font-bold">●</span>
+            <div>
+              <div class="font-bold text-white">Proyek PBL — Mitra Usaha Bunga (Sadita Decoration)</div>
+              <div class="text-xs text-slate-400">Membangun sistem informasi manajemen pesanan (CRM) bersama tim untuk digitalisasi proses bisnis mitra nyata.</div>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-emerald-400 font-bold">●</span>
+            <div>
+              <div class="font-bold text-white">Campus Ambassador — MySkill (Batch 1) & Populix</div>
+              <div class="text-xs text-slate-400">Mempromosikan pengembangan keterampilan teknologi digital dan riset di lingkungan kampus.</div>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-emerald-400 font-bold">●</span>
+            <div>
+              <div class="font-bold text-white">Koordinator/DPH & Asisten Agama Islam — LRAI PNP</div>
+              <div class="text-xs text-slate-400">Mengoordinasikan program kerja organisasi tingkat kampus dan membina mahasiswa.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak / Footer -->
+  <footer id="kontak" class="py-16 px-6 border-t border-slate-800 bg-slate-950">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <span class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-mono">Open for WFA Web Developer Internship</span>
+      <h2 class="text-3xl font-extrabold text-white">Siap Belajar Cepat & Berkontribusi di Tim Anda</h2>
+      <p class="text-sm text-slate-400 max-w-xl mx-auto">
+        Saya sangat antusias untuk mendalami pengembangan CRM menggunakan <strong>Laravel & Filament</strong> serta mengoptimalkan produktivitas pengembangan menggunakan <strong>AI Agent</strong>.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 pt-2 text-xs font-semibold">
+        <a href="mailto:jelmayora24@gmail.com" class="px-5 py-3 rounded-xl bg-orange-500 text-slate-950 font-bold hover:bg-orange-400 transition">
+          ✉️ jelmayora24@gmail.com
+        </a>
+        <a href="https://wa.me/62895617780407" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl glass text-white hover:border-orange-400 transition">
+          📱 +62 895-6177-80407
+        </a>
+        <a href="https://github.com/jelmayora24-hub" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl glass text-white hover:border-orange-400 transition">
+          💻 github.com/jelmayora24-hub
+        </a>
+      </div>
+      <div class="pt-8 text-xs text-slate-500">
+        © 2026 Jeli Mayora • Politeknik Negeri Padang • Dibuat dengan bantuan Antigravity AI Agent
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Data 7 Project Antigravity
+    const allProjects = [
+      {
+        cat: 'LARAVEL',
+        badge: '⭐ Featured CRM Project',
+        badgeColor: 'bg-orange-500/15 text-orange-300',
+        stack: 'Laravel 13 • PHP 8.3 • Pest',
+        title: 'SaditaSystem — CRM & Order Management System',
+        desc: 'Sistem Informasi Manajemen Pelanggan & Pesanan (CRM) untuk bisnis Sadita Florist, Hantaran & Dekorasi. Mendukung alur request order pelanggan, review admin, penyesuaian harga kustom, verifikasi pembayaran, pelacakan produksi harian, hingga cetak laporan/invoice PDF (barryvdh/laravel-dompdf).',
+        tags: ['Laravel 13', 'CRM Pipeline', 'DomPDF', 'RBAC Admin/Staff', 'Pest Automated Test'],
+        url: 'https://github.com/jelmayora24-hub/sadita-crm-system',
+        linkText: 'Buka Repository GitHub ↗',
+        meta: 'Mitra Usaha PBL'
+      },
+      {
+        cat: 'LARAVEL',
+        badge: 'Laravel Web Application',
+        badgeColor: 'bg-sky-500/15 text-sky-300',
+        stack: 'Laravel 13 • Eloquent ORM',
+        title: 'SIAKAD Portal — Sistem Manajemen Akademik (project2)',
+        desc: 'Portal manajemen data akademik berbasis Laravel 13 yang dilengkapi fitur Autentikasi + Proteksi Captcha (mews/captcha), pemisahan hak akses Admin & User Middleware, Dashboard Statistik Real-time, Global Search lintas model, serta modul CRUD lengkap (Mahasiswa, Dosen, Mata Kuliah, Prodi, User).',
+        tags: ['Laravel 13', 'Eloquent Relations', 'Mews Captcha', 'Soft Deletes', 'Blade UI'],
+        url: 'https://github.com/jelmayora24-hub/project2-siakad-laravel',
+        linkText: 'Buka Repository GitHub ↗',
+        meta: 'Pemrograman Framework'
+      },
+      {
+        cat: 'WEB',
+        badge: 'E-Commerce & QA Engineering',
+        badgeColor: 'bg-purple-500/15 text-purple-300',
+        stack: 'Next.js 14 • TypeScript • MySQL',
+        title: 'RECCA — Campus Marketplace & Dual-Track Escrow',
+        desc: 'Platform marketplace mahasiswa Politeknik Negeri Padang dengan arsitektur Boundary-Control-Entity (BCE), database MySQL 17 tabel ternormalisasi 3NF, transaksi Dual-Track (COD Kampus & Midtrans Escrow), serta asisten AI.',
+        tags: ['Next.js 14', 'TypeScript', 'MySQL 3NF', 'Midtrans Escrow', 'QA & SRS'],
+        url: 'https://github.com/DzakiNaufal/Recca',
+        linkText: 'Lihat Repository Proyek ↗',
+        meta: 'Proyek Semester 5'
+      },
+      {
+        cat: 'WEB',
+        badge: 'REST API & WebSocket',
+        badgeColor: 'bg-emerald-500/15 text-emerald-300',
+        stack: 'FastAPI • WebSocket • SQLite',
+        title: 'Real-Time Patient Health Monitoring System',
+        desc: 'Backend API dan sistem pemantauan tanda vital pasien secara real-time menggunakan WebSocket. Dilengkapi deteksi alarm kritis otomatis (< 60 bpm atau > 100 bpm), pelacakan koordinat lokasi GPS pasien, serta dokumentasi Swagger OpenAPI.',
+        tags: ['FastAPI', 'WebSocket', 'Pydantic', 'SQLite', 'Real-Time Alarm'],
+        url: 'https://github.com/jelmayora24-hub/health-monitoring-api',
+        linkText: 'Buka Repository GitHub ↗',
+        meta: 'Healthcare System'
+      },
+      {
+        cat: 'WEB',
+        badge: 'Microservices SOA',
+        badgeColor: 'bg-amber-500/15 text-amber-300',
+        stack: 'Spring Boot • Eureka • RabbitMQ',
+        title: 'Distributed E-Commerce Microservices Architecture',
+        desc: 'Sistem microservices terdistribusi dengan Netflix Eureka Service Discovery, API Gateway, layanan Auth, Produk, Pelanggan, Order Command & Query (CQRS), serta message broker RabbitMQ (Producer, Consumer, Email) di atas Docker Compose.',
+        tags: ['Java Spring Boot', 'Eureka Server', 'API Gateway', 'RabbitMQ', 'Docker Compose'],
+        url: 'https://github.com/jelmayora24-hub',
+        linkText: 'Lihat Profil GitHub ↗',
+        meta: 'Arsitektur Berbasis Layanan'
+      },
+      {
+        cat: 'AI',
+        badge: 'Machine Learning & Web App',
+        badgeColor: 'bg-pink-500/15 text-pink-300',
+        stack: 'Python • SVM • Image Processing',
+        title: 'Banana Ripeness Classification (SVM + Web Prototype)',
+        desc: 'Sistem klasifikasi tingkat kematangan buah pisang (Unripe, Ripe, Overripe, Rotten) menggunakan algoritma Support Vector Machine (SVM) pada dataset 1.200 citra (1.000 latih & 200 uji), dilengkapi aplikasi web prototype interaktif untuk pengujian gambar.',
+        tags: ['Python', 'SVM Classifier', 'Feature Extraction', 'Jupyter Notebook', 'Web Prototype'],
+        url: 'https://github.com/jelmayora24-hub',
+        linkText: 'Lihat Profil GitHub ↗',
+        meta: 'Machine Learning Semester 5'
+      },
+      {
+        cat: 'AI',
+        badge: 'Mobile App & PHP REST API',
+        badgeColor: 'bg-cyan-500/15 text-cyan-300',
+        stack: 'Android • Flutter • PHP MySQL',
+        title: 'Mobile Clinic Medical Record & Culinary Catalog App',
+        desc: 'Aplikasi mobile Android manajemen rekam medis pasien klinik (terintegrasi backend PHP & MySQL) serta aplikasi mobile katalog kuliner dan toko dengan arsitektur package modular.',
+        tags: ['Android Native', 'Flutter SDK', 'PHP MySQL API', 'Mobile UI/UX'],
+        url: 'https://github.com/jelmayora24-hub',
+        linkText: 'Lihat Profil GitHub ↗',
+        meta: 'Pemrograman Mobile'
+      }
+    ];
+
+    let activeProjCat = 'ALL';
+    function filterProjects(cat) {
+      activeProjCat = cat;
+      ['ALL', 'LARAVEL', 'WEB', 'AI'].forEach(c => {
+        const b = document.getElementById('proj-' + c);
+        b.className = (c === cat)
+          ? 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-orange-500 text-slate-950'
+          : 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700';
+      });
+      renderProjects();
+    }
+
+    function renderProjects() {
+      const grid = document.getElementById('projectsGrid');
+      const items = allProjects.filter(p => activeProjCat === 'ALL' || p.cat === activeProjCat);
+      grid.innerHTML = items.map(p => `
+        <div class="glass rounded-2xl p-6 flex flex-col justify-between hover:border-orange-400/50 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full ${p.badgeColor} text-xs font-semibold">${p.badge}</span>
+              <span class="text-xs font-mono text-slate-400">${p.stack}</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">${p.title}</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">${p.desc}</p>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              ${p.tags.map(t => `<span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-[11px] font-mono">${t}</span>`).join('')}
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between">
+            <a href="${p.url}" target="_blank" rel="noopener" class="text-xs font-bold text-orange-400 hover:text-orange-300">${p.linkText}</a>
+            <span class="text-[11px] text-slate-400">${p.meta}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+    renderProjects();
+
+    // 2. Simulasi Tabel CRM Filament
+    const crmData = [
+      { id: 'ORD-2601', client: 'PT Nusantara Kreatif', service: 'Papan Bunga Grand Opening (x3)', status: 'PAID', badge: 'Terverifikasi (Siap Kirim)', color: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30', amount: 'Rp 2.450.000' },
+      { id: 'ORD-2602', client: 'CV Andalas Medika', service: 'Dekorasi Acara & Hantaran VIP', status: 'REVIEW', badge: 'Negosiasi Harga Admin', color: 'bg-amber-500/15 text-amber-300 border-amber-500/30', amount: 'Rp 5.800.000' },
+      { id: 'ORD-2603', client: 'Rina Permata (Personal)', service: 'Paket Hantaran Lamaran Custom', status: 'NEW', badge: 'Lead Baru Masuk', color: 'bg-sky-500/15 text-sky-300 border-sky-500/30', amount: 'Rp 1.750.000' },
+      { id: 'ORD-2604', client: 'Bank Nagari Cabang Utama', service: 'Karangan Bunga Ucapan Eksekutif', status: 'PAID', badge: 'Terverifikasi (Selesai)', color: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30', amount: 'Rp 1.200.000' },
+      { id: 'ORD-2605', client: 'Hotel Pangeran Beach', service: 'Kontrak Dekorasi Ballroom Bulanan', status: 'REVIEW', badge: 'Review Penawaran CRM', color: 'bg-amber-500/15 text-amber-300 border-amber-500/30', amount: 'Rp 12.500.000' }
+    ];
+    let activeFilter = 'ALL';
+    function filterCrm(status) {
+      activeFilter = status;
+      ['ALL', 'NEW', 'REVIEW', 'PAID'].forEach(key => {
+        const btn = document.getElementById('btn-' + key);
+        btn.className = (key === status)
+          ? 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-orange-500 text-slate-950'
+          : 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700';
+      });
+      renderCrmTable();
+    }
+    function advanceStatus(index) {
+      const order = crmData[index];
+      if (order.status === 'NEW') {
+        order.status = 'REVIEW'; order.badge = 'Negosiasi Harga Admin'; order.color = 'bg-amber-500/15 text-amber-300 border-amber-500/30';
+      } else if (order.status === 'REVIEW') {
+        order.status = 'PAID'; order.badge = 'Terverifikasi (Siap Kirim)'; order.color = 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30';
+      } else {
+        order.status = 'NEW'; order.badge = 'Lead Baru Masuk'; order.color = 'bg-sky-500/15 text-sky-300 border-sky-500/30';
+      }
+      renderCrmTable();
+    }
+    function renderCrmTable() {
+      const q = (document.getElementById('crmSearch').value || '').toLowerCase();
+      const tbody = document.getElementById('crmTableBody');
+      const rows = crmData
+        .map((item, idx) => ({ ...item, idx }))
+        .filter(item => (activeFilter === 'ALL' || item.status === activeFilter))
+        .filter(item => item.client.toLowerCase().includes(q) || item.service.toLowerCase().includes(q) || item.id.toLowerCase().includes(q));
+      tbody.innerHTML = rows.map(item => `
+        <tr class="hover:bg-slate-900/60 transition">
+          <td class="py-3.5 px-4 font-mono text-orange-400 font-semibold">${item.id}</td>
+          <td class="py-3.5 px-4 font-semibold text-white">${item.client}</td>
+          <td class="py-3.5 px-4 text-slate-300">${item.service}</td>
+          <td class="py-3.5 px-4"><span class="px-2.5 py-1 rounded-full text-[11px] font-semibold border ${item.color}">${item.badge}</span></td>
+          <td class="py-3.5 px-4 font-mono text-slate-200">${item.amount}</td>
+          <td class="py-3.5 px-4 text-right">
+            <button onclick="advanceStatus(${item.idx})" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-orange-500 hover:text-slate-950 text-slate-200 text-[11px] font-semibold transition">Update Status ↻</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+    renderCrmTable();
+
+    // 3. Interactive HTML5 Canvas Video Player & WebM Video Generator
+    const videoSlides = [
+      {
+        tag: 'WEB DEVELOPER PORTFOLIO • WFA INTERNSHIP',
+        title: 'JELI MAYORA',
+        sub: 'Mahasiswi Aktif Semester 5 • D4 TRPL • Politeknik Negeri Padang',
+        color: '#f97316',
+        bullets: [
+          'Menguasai PHP 8.3, Framework Laravel 13 & Konsep Admin Panel Filament',
+          'Berpengalaman Mengembangkan Website CRM (SaditaSystem) & Portal SIAKAD',
+          'Mengembangkan 7+ Proyek Menggunakan Google Antigravity AI Agent',
+          'Peraih Juara 3 UI/UX Design KMIPN Nasional & Finalis E-Government KMIPN 2026'
+        ],
+        tech: ['PHP 8.3', 'Laravel 13', 'Filament Admin', 'MySQL', 'Antigravity AI Agent']
+      },
+      {
+        tag: 'PROJECT 01 • FEATURED CRM WEB APPLICATION',
+        title: 'SaditaSystem — CRM & Order Management',
+        sub: 'Sistem Informasi Manajemen Pelanggan & Pesanan (Sadita Florist & Dekorasi)',
+        color: '#f97316',
+        bullets: [
+          'Mengelola pipeline CRM mulai dari Request Order Pelanggan hingga Selesai',
+          'Fitur Review Admin, Penyesuaian Harga Kustom, & Verifikasi Pembayaran',
+          'Cetak Invoice & Laporan Operasional Otomatis ke PDF (DomPDF)',
+          'Dilengkapi Role-Based Access Control & Automated Testing (PestPHP)'
+        ],
+        tech: ['Laravel 13', 'PHP 8.3', 'CRM Pipeline', 'DomPDF', 'PestPHP']
+      },
+      {
+        tag: 'PROJECT 02 • LARAVEL ACADEMIC MANAGEMENT SYSTEM',
+        title: 'SIAKAD Portal — Sistem Manajemen Akademik',
+        sub: 'Portal Web Akademik Berbasis Laravel 13 dengan Keamanan Berlapis (project2)',
+        color: '#38bdf8',
+        bullets: [
+          'Autentikasi Login & Registrasi dengan Proteksi Captcha Dinamis (mews/captcha)',
+          'Pemisahan Hak Akses Menggunakan Custom Middleware (admin.auth & user.auth)',
+          'Dashboard Analitik Real-Time dengan Agregasi Eloquent ORM (withCount)',
+          'Global Search & Full CRUD (Mahasiswa, Dosen, Matakuliah, Prodi, User)'
+        ],
+        tech: ['Laravel 13', 'Eloquent ORM', 'Mews Captcha', 'Soft Deletes', 'Blade UI']
+      },
+      {
+        tag: 'PROJECT 03 • E-COMMERCE & CAMPUS MARKETPLACE',
+        title: 'RECCA — Campus Marketplace & Escrow',
+        sub: 'Platform Jual-Beli Mahasiswa PNP dengan Transaksi Dual-Track & AI Assistant',
+        color: '#a855f7',
+        bullets: [
+          'Arsitektur Boundary-Control-Entity (BCE) dengan Next.js 14 & TypeScript',
+          'Database MySQL 17 Tabel Ternormalisasi 3NF dengan Prepared Statements',
+          'Mendukung Transaksi Dual-Track: COD Kampus & Midtrans Online Escrow',
+          'Berperan dalam Quality Assurance (QA), Pengujian Skenario, & SRS'
+        ],
+        tech: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'MySQL 3NF', 'QA & SRS']
+      },
+      {
+        tag: 'PROJECT 04 • REAL-TIME HEALTHCARE BACKEND',
+        title: 'Real-Time Patient Health Monitoring API',
+        sub: 'Sistem Pemantauan Detak Jantung & Tanda Vital Pasien (FastAPI & WebSocket)',
+        color: '#10b981',
+        bullets: [
+          'Streaming Data Tanda Vital Pasien Secara Real-Time via WebSocket',
+          'Sistem Deteksi & Alarm Darurat Otomatis (< 60 BPM atau > 100 BPM)',
+          'Pelacakan Koordinat Lokasi GPS Pasien Saat Kondisi Darurat',
+          'Dokumentasi REST API Interaktif Menggunakan Swagger UI & ReDoc'
+        ],
+        tech: ['Python', 'FastAPI', 'WebSocket', 'Pydantic', 'SQLite']
+      },
+      {
+        tag: 'PROJECT 05 • SERVICE-ORIENTED ARCHITECTURE (SOA)',
+        title: 'Distributed E-Commerce Microservices',
+        sub: 'Arsitektur Layanan Terdistribusi (Spring Boot, Eureka, RabbitMQ & Docker)',
+        color: '#f59e0b',
+        bullets: [
+          'Service Discovery Terpusat dengan Netflix Eureka Server & API Gateway',
+          'Microservices Terpisah: Auth, Produk, Pelanggan, & Order Service (CQRS)',
+          'Komunikasi Asynchronous Antar-Service dengan RabbitMQ Message Broker',
+          'Orkestrasi Container Multi-Service Menggunakan Docker Compose'
+        ],
+        tech: ['Spring Boot', 'Eureka Server', 'API Gateway', 'RabbitMQ', 'Docker']
+      },
+      {
+        tag: 'PROJECT 06 & 07 • AI MACHINE LEARNING & MOBILE APP',
+        title: 'SVM Banana Classifier & Mobile Clinic App',
+        sub: 'Klasifikasi Citra Kematangan Pisang (SVM) & Aplikasi Android Rekam Medis',
+        color: '#ec4899',
+        bullets: [
+          'Klasifikasi 1.200 Citra Pisang (Unripe, Ripe, Overripe, Rotten) dengan SVM',
+          'Dilengkapi Web Prototype Interaktif untuk Prediksi Citra Secara Langsung',
+          'Aplikasi Mobile Android Rekam Medis Pasien Terintegrasi PHP & MySQL API',
+          'Aplikasi Katalog Kuliner & Toko Mobile dengan Arsitektur Modular'
+        ],
+        tech: ['Python SVM', 'Image Processing', 'Android Native', 'Flutter', 'PHP API']
+      }
+    ];
+
+    const canvas = document.getElementById('portfolioCanvas');
+    const ctx = canvas.getContext('2d');
+    let currentSlide = 0;
+    let slideFrame = 0;
+    let isPlaying = true;
+    const FRAMES_PER_SLIDE = 180; // ~3 seconds at 60fps
+
+    function drawSlide(slideIdx, progress) {
+      const s = videoSlides[slideIdx];
+      ctx.fillStyle = '#0b0f19';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Top bar
+      ctx.fillStyle = s.color;
+      ctx.fillRect(0, 0, canvas.width, 8);
+
+      // Card background
+      ctx.fillStyle = '#12192a';
+      ctx.strokeStyle = '#2d3a58';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(48, 42, canvas.width - 96, canvas.height - 84, 24);
+      ctx.fill();
+      ctx.stroke();
+
+      // Tag badge
+      ctx.fillStyle = '#1c263e';
+      ctx.strokeStyle = s.color;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.roundRect(84, 72, 540, 38, 10);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = s.color;
+      ctx.font = 'bold 16px "JetBrains Mono", monospace';
+      ctx.fillText(s.tag, 102, 97);
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.fillText(`SLIDE ${slideIdx + 1} / ${videoSlides.length}`, canvas.width - 210, 97);
+
+      // Title & Sub
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '800 42px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(s.title, 84, 165);
+
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = '500 21px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(s.sub, 84, 205);
+
+      // Divider
+      ctx.strokeStyle = '#2d3a58';
+      ctx.beginPath();
+      ctx.moveTo(84, 232);
+      ctx.lineTo(canvas.width - 84, 232);
+      ctx.stroke();
+
+      // Bullets
+      const count = Math.min(s.bullets.length, Math.ceil(progress * s.bullets.length * 1.5));
+      let y = 258;
+      for (let i = 0; i < count; i++) {
+        ctx.fillStyle = '#0f172a';
+        ctx.strokeStyle = '#23304a';
+        ctx.beginPath();
+        ctx.roundRect(84, y, canvas.width - 168, 56, 12);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = s.color;
+        ctx.beginPath();
+        ctx.arc(114, y + 28, 9, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#f1f5f9';
+        ctx.font = '500 20px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(s.bullets[i], 140, y + 35);
+        y += 68;
+      }
+
+      // Tech pills
+      let tx = 84;
+      const ty = 555;
+      ctx.font = '600 16px "JetBrains Mono", monospace';
+      s.tech.forEach(t => {
+        const w = ctx.measureText(t).width + 32;
+        ctx.fillStyle = '#1e293b';
+        ctx.strokeStyle = s.color;
+        ctx.beginPath();
+        ctx.roundRect(tx, ty, w, 36, 10);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText(t, tx + 16, ty + 24);
+        tx += w + 12;
+      });
+
+      // Progress bar
+      const totalProg = (slideIdx + progress) / videoSlides.length;
+      ctx.fillStyle = '#1e293b';
+      ctx.beginPath();
+      ctx.roundRect(84, 618, canvas.width - 168, 8, 4);
+      ctx.fill();
+
+      ctx.fillStyle = s.color;
+      ctx.beginPath();
+      ctx.roundRect(84, 618, Math.max(16, (canvas.width - 168) * totalProg), 8, 4);
+      ctx.fill();
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '500 16px "JetBrains Mono", monospace';
+      ctx.fillText('Jeli Mayora • D4 TRPL Politeknik Negeri Padang • github.com/jelmayora24-hub', 84, 654);
+    }
+
+    function animateCanvas() {
+      if (isPlaying) {
+        slideFrame++;
+        if (slideFrame >= FRAMES_PER_SLIDE) {
+          slideFrame = 0;
+          currentSlide = (currentSlide + 1) % videoSlides.length;
+        }
+      }
+      drawSlide(currentSlide, Math.min(1, (slideFrame + 15) / FRAMES_PER_SLIDE));
+      requestAnimationFrame(animateCanvas);
+    }
+    requestAnimationFrame(animateCanvas);
+
+    function togglePlayVideo() {
+      isPlaying = !isPlaying;
+      document.getElementById('btnPlayVideo').textContent = isPlaying ? '⏸️ Jeda Video' : '▶️ Putar Video';
+    }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % videoSlides.length;
+      slideFrame = 45;
+    }
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + videoSlides.length) % videoSlides.length;
+      slideFrame = 45;
+    }
+
+    function recordAndDownloadVideo() {
+      const statusEl = document.getElementById('recordStatus');
+      const btn = document.getElementById('btnRecordVideo');
+      if (!canvas.captureStream || typeof MediaRecorder === 'undefined') {
+        alert('Browser Anda tidak mendukung perekaman langsung. Silakan gunakan file Video_Portofolio_Jeli_Mayora.avi yang sudah dibuat di folder project!');
+        return;
+      }
+      currentSlide = 0;
+      slideFrame = 0;
+      isPlaying = true;
+      btn.disabled = true;
+      statusEl.classList.remove('hidden');
+      statusEl.textContent = '🔴 Sedang merekam seluruh 7 slide video portofolio (~21 detik)... Mohon tunggu hingga unduhan otomatis selesai.';
+
+      const stream = canvas.captureStream(30);
+      const recorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+      const chunks = [];
+      recorder.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Video_Portofolio_Jeli_Mayora.webm';
+        a.click();
+        statusEl.textContent = '✅ Video_Portofolio_Jeli_Mayora.webm berhasil diunduh!';
+        btn.disabled = false;
+      };
+      recorder.start();
+      setTimeout(() => {
+        if (recorder.state === 'recording') recorder.stop();
+      }, 21500);
+    }
+  </script>
+</body>
+</html>
